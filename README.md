@@ -21,9 +21,11 @@
 
 Simply clone the repository and start building demo tests and benchmarks.
 
-    git clone REPO.git
+    git clone https://github.com/fbaeuerlein/cpp-cmake-template.git
+    
+    cd cpp-cmake-template
+    git submodule init && git submodule update
 
-    cd REPO
     mkdir build && cd build
     cmake .. 
     make
@@ -32,11 +34,9 @@ To check your compiler command line calls, simply use `make VERBOSE=1`.
 
 You surely don't want this repositories history. To (re)initialize it, simply do
 
-    rm .git
-    echo "ext/" >> .gitignore
-    git init
-  
-The submodules should be kept. To be sure to get notified about changes in the ext folder, remove the according entry within .gitignore file.
+    ./reinit.sh
+
+This will clear the complete repository history by removing the .git folder. Also the submodules will be re-added and initialized.
 
 ## Requirements
 
