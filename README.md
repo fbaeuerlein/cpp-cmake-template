@@ -32,9 +32,9 @@ To check your compiler command line calls, simply use `make VERBOSE=1`.
 
 You surely don't want this repositories history. To (re)initialize it, simply do
 
-  rm .git
-  echo "ext/" >> .gitignore
-  git init
+    rm .git
+    echo "ext/" >> .gitignore
+    git init
   
 The submodules should be kept. To be sure to get notified about changes in the ext folder, remove the according entry within .gitignore file.
 
