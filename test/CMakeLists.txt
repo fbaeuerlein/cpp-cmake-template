@@ -1,2 +1,6 @@
 add_subdirectory("unittests")
-add_subdirectory("benchmarks")
+
+# if benchmark build is enabled, also build subdirectory
+if(ENABLE_BENCHMARK_BUILD)
+    add_subdirectory("benchmarks")
+endif()

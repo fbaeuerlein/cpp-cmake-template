@@ -12,9 +12,14 @@ set(CMAKE_CXX_FLAGS "-Wall -Wextra")
 set(CMAKE_CXX_FLAGS_DEBUG "-g")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
-# disable building tests for benchmark
-set(BENCHMARK_ENABLE_TESTING OFF CACHE BOOL "" FORCE)
-add_subdirectory("ext/benchmark")
+# set to OFF to disable build of benchmark lib and benchmarks
+set(ENABLE_BENCHMARK_BUILD ON)
+
+if(ENABLE_BENCHMARK_BUILD)
+  # disable building tests for benchmark
+  set(BENCHMARK_ENABLE_TESTING OFF CACHE BOOL "" FORCE)
+  add_subdirectory("ext/benchmark")
+endif()
 
 add_subdirectory("ext/googletest")
 
